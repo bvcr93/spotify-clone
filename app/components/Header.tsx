@@ -7,19 +7,24 @@ import { twMerge } from "tailwind-merge";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 import Button from "./Button";
+import useAuthModal from "@/hooks/useAuthModal";
 interface HeaderProps {
   children: React.ReactNode;
   className?: string;
 }
 
 export default function Header({ children, className }: HeaderProps) {
+  const authModal = useAuthModal();
   const router = useRouter();
   const handleLogout = () => {
     // handle logout
   };
   return (
     <div
-      className={twMerge(`h-fit bg-gradient-to-b from-neutral-800 p-6`, className)}
+      className={twMerge(
+        `h-fit bg-gradient-to-b from-neutral-800 p-6`,
+        className
+      )}
     >
       <div className="w-full mb-4 flex items-center justify-between text-white">
         <div className="hidden md:flex gap-x-2 items-center">
@@ -49,13 +54,13 @@ export default function Header({ children, className }: HeaderProps) {
             <div>
               <Button
                 className="bg-transparent text-neutral-300 font-medium"
-                onClick={handleLogout}
+                onClick={authModal.onOpen}
               >
-                Logout
+                SignUp
               </Button>
             </div>
             <div>
-              <Button onClick={() => {}} className="bg-white px-6 py-2">
+              <Button onClick={authModal.onOpen} className="bg-white px-6 py-2">
                 Login
               </Button>
             </div>
