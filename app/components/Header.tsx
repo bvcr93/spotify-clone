@@ -19,7 +19,7 @@ export default function Header({ children, className }: HeaderProps) {
   };
   return (
     <div
-      className={twMerge(`h-fit bg-gradient-to-b from-red-900 p-6`, className)}
+      className={twMerge(`h-fit bg-gradient-to-b from-neutral-800 p-6`, className)}
     >
       <div className="w-full mb-4 flex items-center justify-between text-white">
         <div className="hidden md:flex gap-x-2 items-center">
