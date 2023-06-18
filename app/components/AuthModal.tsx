@@ -11,6 +11,8 @@ import { ThemeSupa } from "@supabase/auth-ui-shared";
 import useAuthModal from "@/hooks/useAuthModal";
 
 
+interface AuthModalProps {}
+
 export default function AuthModal() {
   const supabaseClient = useSupabaseClient();
   const router = useRouter();
