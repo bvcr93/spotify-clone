@@ -52,7 +52,7 @@ export default function UploadModal() {
       const { data: songData, error: songError } = await supabaseClient.storage
         .from("songs")
         .upload(`song-${values.title}-${uniqueID}`, songFile, {
-          // this is imagepath in suapabase
+          // this is imagepath in supabase
           cacheControl: "3600",
           upsert: false,
         });
@@ -83,7 +83,7 @@ export default function UploadModal() {
           title: values.title,
           author: values.author,
           image_path: imageData.path,
-          songs_path: songData.path,
+          songs_path: songData.path, //should be song but in supabase its songs
         });
       if (supabaseError) {
         return toast.error(supabaseError.message);
