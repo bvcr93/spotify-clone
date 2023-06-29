@@ -1,5 +1,6 @@
 'use client'
 
+import LikeButton from "@/app/components/LikeButton"
 import MediaItem from "@/app/components/MediaItem"
 import { Song } from "@/types"
 
@@ -29,7 +30,7 @@ export default function SearchContent({songs}: SearchContentProps) {
               data={song}
             />
           </div>
-          {/* <LikeButton songId={song.id} /> */}
+          <LikeButton songId={song.id} />
         </div>
       ))}
     </div>
