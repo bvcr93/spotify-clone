@@ -15,6 +15,7 @@ interface AuthModalProps {}
 
 export default function AuthModal() {
   const supabaseClient = useSupabaseClient();
+  console.log(supabaseClient)
   const router = useRouter();
   const { session } = useSessionContext();
 
